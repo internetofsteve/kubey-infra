@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  kubey-reverse-proxy:
+    image: traefik
+    command: --api --docker
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  kubey-ui:
+    image: quay.io/internetofsteve/kubey-ui
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=80"
+      - "traefik.frontend.rule=PathPrefix:/"
+
+  kubey-api:
+    image: quay.io/internetofsteve/kubey-api
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.port=3000"
+      - "traefik.frontend.rule=Path:/cowboyNames"
