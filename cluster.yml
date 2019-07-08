@@ -99,7 +99,7 @@ metadata:
   name: master-ap-southeast-2a
 spec:
   image: kope.io/k8s-1.12-debian-stretch-amd64-hvm-ebs-2019-05-13
-  machineType: t2.micro
+  machineType: t3.small
   maxSize: 1
   minSize: 1
   nodeLabels:
