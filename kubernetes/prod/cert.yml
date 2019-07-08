@@ -1,0 +1,18 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: kubey-cert
+  namespace: default
+spec:
+  secretName: kubey-cert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - kubey.test.dius.com.au
+  acme:
+    config:
+      - dns01:
+         provider: route53
+        domains:
+          - kubey.test.dius.com.au

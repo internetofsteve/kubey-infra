@@ -95,22 +95,3 @@ spec:
       port: 443
       name: https
   type: LoadBalancer
----
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certificate
-metadata:
-  name: steve-dev-dius-cert
-  namespace: default
-spec:
-  secretName: steve-dev-dius-cert
-  issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
-  dnsNames:
-  - steve.dev.dius.com.au
-  acme:
-    config:
-      - dns01:
-         provider: route53
-        domains:
-          - steve.dev.dius.com.au
