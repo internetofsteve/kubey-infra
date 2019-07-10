@@ -1,6 +1,6 @@
 # kubey-infra
 
-Template store for setting up the environment for our demo app.
+Template store for setting up the Kubernetes environment for our demo app.
 
 ## Deployment
 TODO
@@ -21,6 +21,9 @@ TODO
 
 #### Cert-Manager
 [Cert Manager](https://github.com/jetstack/cert-manager) is used to automatically issue HTTPS certs (powered by [Lets Encrypt](https://letsencrypt.org/)) for our services.
+
+## CI
+This project also contains Kubernetes templates that enable CI to perform deployments
 
 
 
