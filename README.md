@@ -7,9 +7,16 @@ TODO
 
 ## Components
 
+
+### docker-compose
+
+Used for local development of individual apps including APIs and UIs that make up our demo project.
+
+
 ### Kops Components
 
 [Kops](https://github.com/kubernetes/kops) is used to deploy our physical environment to AWS.
+
 
 ### Kubernetes Components
 
@@ -22,14 +29,13 @@ TODO
 #### Cert-Manager
 [Cert Manager](https://github.com/jetstack/cert-manager) is used to automatically issue HTTPS certs (powered by [Lets Encrypt](https://letsencrypt.org/)) for our services.
 
+
 ## CI
 This project also contains Kubernetes templates that enable CI to perform deployments
 
 
 
 
-### docker-compose
 
-Used for local development of individual apps including APIs and UIs that make up our demo project.
 
 
