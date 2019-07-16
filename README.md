@@ -1,6 +1,20 @@
-# kubey-infra
+# 🏗kubey-infra
 
-Template store for setting up the Kubernetes environment for our demo app.
+
+## Overview
+This project configures the kubey staging and production environments.
+
+Each *kubey environment* is a Kubernetes cluster, provisioned in AWS using Kops. For more info on Kubernetes and Kops, see:
+- Kubernetes Website - [https://kubernetes.io/](https://kubernetes.io/)
+- Kops Github [https://github.com/kubernetes/kops](https://github.com/kubernetes/kops)
+
+### Demo Apps
+A running *kubey environment* provides useful things like loadbalancing, TLS and scalibility out of the box. It can house any dockerized application that we choose, providing that the application also supplies a kubernetes configuration file.
+
+For demonstrations purposes, we currently have two apps - a UI and an API:
+- [kubey-api](https://github.com/internetofsteve/kubey-api) - A simple express API
+- [kubey-ui](https://github.com/internetofsteve/kubey-ui) - A simple React application that makes requests to kubey-api
+
 
 ## Deployment
 TODO
@@ -15,7 +29,7 @@ Used for local development of individual apps including APIs and UIs that make u
 
 ### Kops Components
 
-[Kops](https://github.com/kubernetes/kops) is used to deploy our physical environment to AWS.
+ is used to deploy our physical environment to AWS.
 
 
 ### Kubernetes Components
