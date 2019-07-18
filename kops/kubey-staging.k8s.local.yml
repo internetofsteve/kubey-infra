@@ -89,11 +89,12 @@ spec:
       type: Public
     masters: private
     nodes: private
+
 ---
+
 apiVersion: kops/v1alpha2
 kind: InstanceGroup
 metadata:
-  creationTimestamp: 2019-07-04T01:10:22Z
   labels:
     kops.k8s.io/cluster: kubey-staging.k8s.local
   name: master-ap-southeast-2a
@@ -107,22 +108,41 @@ spec:
   role: Master
   subnets:
   - ap-southeast-2a
+
 ---
+
 apiVersion: kops/v1alpha2
 kind: InstanceGroup
 metadata:
-  creationTimestamp: 2019-07-04T01:10:22Z
   labels:
     kops.k8s.io/cluster: kubey-staging.k8s.local
-  name: nodes
+  name: nodes-ap-southeast-2a
 spec:
   image: kope.io/k8s-1.12-debian-stretch-amd64-hvm-ebs-2019-05-13
   machineType: t3.micro
-  maxSize: 2
-  minSize: 2
+  maxSize: 3
+  minSize: 1
   nodeLabels:
     kops.k8s.io/instancegroup: nodes
   role: Node
   subnets:
   - ap-southeast-2a
+
+---
+
+apiVersion: kops/v1alpha2
+kind: InstanceGroup
+metadata:
+  labels:
+    kops.k8s.io/cluster: kubey-staging.k8s.local
+  name: nodes-ap-southeast-2b
+spec:
+  image: kope.io/k8s-1.12-debian-stretch-amd64-hvm-ebs-2019-05-13
+  machineType: t3.micro
+  maxSize: 3
+  minSize: 1
+  nodeLabels:
+    kops.k8s.io/instancegroup: nodes
+  role: Node
+  subnets:
   - ap-southeast-2b
